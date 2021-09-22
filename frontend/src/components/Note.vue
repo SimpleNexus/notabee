@@ -8,7 +8,8 @@
       {{ note.title }}
     </v-card-title>
     <v-card-subtitle>
-      Created at:
+      Created at: {{ new Date(note.createdAt).toLocaleString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+      <!-- I probably wouldn't have known about computed properties, but I think that's a good sign if used here instead -->
     </v-card-subtitle>
     <v-card-text height="300">
       {{ note.body }}
@@ -27,6 +28,7 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 export default {
   name: 'Note',
   props: {
@@ -37,7 +39,20 @@ export default {
   },
   methods: {
     deleteNote () {
-      alert("Not implemented yet!")
+      this.$apollo.mutate({
+        mutation: gql`mutation ($noteId: ID!) {
+          deleteNote(input: { params: { id: $noteId }}) {
+            note {
+              id
+            }
+          }
+        }`,
+        variables: {
+          noteId: this.note.id
+        }
+      }).then(() => {
+        this.$emit('note-deleted') // Nice way of touching bases on promises here
+      })
     }
   }
 }

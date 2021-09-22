@@ -12,6 +12,7 @@
           >
             <Note
               :note="note"
+              @note-deleted="refetchNotes"
             />
           </v-col>
         </template>
@@ -40,6 +41,7 @@ export default {
                 id
                 title
                 body
+                createdAt
             }
         }`
   },

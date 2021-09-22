@@ -26,10 +26,10 @@ Once you've verified that all of these prerequisites are installed and functiona
 1. Create a github repo named `notabee`
 2. Copy all of the contents of this repo into your new repo
 3. Enter the `api` directory, eg `cd api`
-4. Run `rails db:create` (create the dev database)
-5. Run `rails db:migrate` (migrate the database to the current schema)
-6. Run `rails db:seed` (seed the database with fake data)
-7. Run `bundle install` (install ruby gem dependencies)
+4. Run `bundle install` (install ruby gem dependencies)
+5. Run `rails db:create` (create the dev database)
+6. Run `rails db:migrate` (migrate the database to the current schema)
+7. Run `rails db:seed` (seed the database with fake data)
 8. Enter the `frontend` directory, eg `cd ../frontend`
 9. Run `yarn install` (install npm dependencies)
 10. Start the Rails server by entering the `api` directory and running `rails s`
@@ -110,3 +110,13 @@ GraphQL can be difficult to understand. We've provided a playground for you at `
 ## Questions
 
 Please feel free to reach out to me with any technical or clarifying questions at <jmenden@simplenexus.com>.
+
+## Caleb's Notes
+
+### "Your Assignment" Section
+- I love that this tech stack mirrors our own. I feel like it has a two-way benefit, both helping us identify developers that can hit the ground running while also providing a sneak peek so new developers will already know their way around a little.
+- When adding the "created_at" attribute, I was stuck on using "created_at" instead of "createdAt" in the front-end for an embarrassingly long time :) (okay not that long, maybe 7 minutes). The Graphiql playground helped me solve this almost immediately - that feature is really nice.
+- In order for changes to be reflected on the front-end, the server needs to be restarted right? Not sure if that should be explained or not - I hope it won't trip someone up for very long if at all. Probably won't if they've had some experience with web development.
+- This was very fun to work on! Feels like it flexes some great muscles - reading through and understanding a codebase, modeling new code after existing patterns, basic web development skills. Step 1 wasn't bad at all, Step 2 was just a matter of finding where the data is ordered in the back-end and switching it. Step 3 was a lot more intense and I hit a roadblock or two, but I think it was within a healthy limit.
+- This section took me a little less than an hour. If I hadn't been tripped up on some GraphQL conventions, it probably would have been closer to 30-40 minutes :)
+- I'm being super honest about where I was tripped up just to provide a heads-up for where applicants might also be tripped up. If I was confused or got stuck somewhere, it doesn't mean I think we should change the assignment.
