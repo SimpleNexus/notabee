@@ -114,6 +114,7 @@ Please feel free to reach out to me with any technical or clarifying questions a
 ## Caleb's Notes
 
 ### "Your Assignment" Section
+- I had to run `bundle install` before I could run any other Ruby commands, that's why I moved it up in the order of the list above.
 - I love that this tech stack mirrors our own. I feel like it has a two-way benefit, both helping us identify developers that can hit the ground running while also providing a sneak peek so new developers will already know their way around a little.
 - When adding the "created_at" attribute, I was stuck on using "created_at" instead of "createdAt" in the front-end for an embarrassingly long time :) (okay not that long, maybe 7 minutes). The Graphiql playground helped me solve this almost immediately - that feature is really nice.
 - This was very fun to work on! Feels like it flexes some great muscles - reading through and understanding a codebase, modeling new code after existing patterns, basic web development skills. Step 1 wasn't bad at all, Step 2 was just a matter of finding where the data is ordered in the back-end and switching it. Step 3 was a lot more intense and I hit a roadblock or two, but I think it was within a healthy limit.
@@ -124,3 +125,6 @@ Please feel free to reach out to me with any technical or clarifying questions a
 - Adding the "Source" field was really fun, and used a couple of things I learned/re-learned from the last part of the previous section. I actually think this part was easier!
 - Ooh, some pure front-end stuff! I'm excited about that. I wonder if applicants will take the time to learn which Vuetify classes to use, or if they'll use custom CSS?
 - This section took me about 20 minutes. No big roadblocks or hiccups :)
+
+### Feeling 💯
+- I'm not a Docker wizard, so I'm going to pass on this one for now :) but I too will be very impressed if an applicant completes this part. Very cool opportunity for DevOps/CI/CD gurus to strut their stuff.
