@@ -40,6 +40,13 @@
               @change="validateForm"
               @focus="validateForm"
             />
+            <v-text-field
+              v-model="noteSource"
+              outlined
+              label="Note Source"
+              @change="validateForm"
+              @focus="validateForm"
+            />
             <v-textarea
               v-model="noteBody"
               outlined
@@ -82,6 +89,7 @@ export default {
     formValid: false,
     loading: false,
     noteTitle: '',
+    noteSource: '',
     noteBody: ''
   }),
   methods: {
@@ -93,6 +101,7 @@ export default {
       this.$emit('note-saved')
       dialog.value = false
       this.noteTitle = ''
+      thid.noteSource = ''
       this.noteBody = ''
       this.loading = false
     },
@@ -100,17 +109,19 @@ export default {
       return new Promise((resolve, reject) => {
         this.$apollo.mutate({
           // Query
-          mutation: gql`mutation ($noteTitle: String!, $noteBody: String!) {
-            addNote(input: { params: { title: $noteTitle, body: $noteBody  }}) {
+          mutation: gql`mutation ($noteTitle: String!, $noteSource: String!, $noteBody: String!) {
+            addNote(input: { params: { title: $noteTitle, source: $noteSource, body: $noteBody  }}) {
               note {
                 id
                 title
+                source
                 body
               }
             }
           }`,
           variables: {
             noteTitle: this.noteTitle,
+            noteSource: this.noteSource,
             noteBody: this.noteBody
           },
         }).then(() => {
@@ -122,6 +133,7 @@ export default {
     },
     cancel (dialog) {
       this.noteTitle = ''
+      this.noteSource = ''
       this.noteBody = ''
       dialog.value = false
     }

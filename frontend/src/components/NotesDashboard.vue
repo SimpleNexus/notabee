@@ -40,6 +40,7 @@ export default {
             notes:getNotes {
                 id
                 title
+                source
                 body
                 createdAt
             }
